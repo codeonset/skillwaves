@@ -1,0 +1,78 @@
+import React from 'react'
+import { Link } from "react-router-dom"
+
+function Signup() {
+    return (
+        <>
+            <div id="my_modal_3" className='flex h-screen items-center justify-center '>
+                <div className="w-[600px] ">
+                    <div className="modal-box">
+                        <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <Link to="/" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 dark:text-black ">✕</Link>
+                        </form>
+                        <h3 className="font-bold text-xl dark:text-black">Signup Now!</h3>
+
+
+
+                        {/* name */}
+
+
+                        <div className='mt-4 space-y-1'>
+                            <span className='dark:text-black'>Name</span>
+                            <br />
+                            <input type="text" placeholder='Enter your fullname ' className='  py-2 border outline-none w-80 px-4 rounded-md' />
+                        </div>
+
+                        {/* Email  */}
+
+                        <div className='mt-4 space-y-1'>
+                            <span className='dark:text-black'>Email</span>
+                            <br />
+                            <input type="text" placeholder='Enter your email ' className='  py-2 border outline-none w-80 px-4 rounded-md' />
+                        </div>
+
+
+                        {/* Password */}
+
+
+                        <div className='mt-4 space-y-1'>
+                            <span className='dark:text-black' >Password</span>
+                            <br />
+                            <input type="text" placeholder='Enter your password ' className='  py-2 border outline-none w-80 px-4 rounded-md' />
+                        </div>
+
+
+
+                        {/*Signup*/}
+
+                        <div className='flex  justify-between mt-5 '>
+                            <button className='cursor-pointer bg-pink-500 hover:bg-pink-700 text-white rounded-md px-3 py-1 '>Signup</button>
+
+
+                            {/* Login */}
+
+
+                            <p className=''>Have account?{" "}
+
+                                <Link to="/" className=' cursor-pointer underline text-blue-500 hover:text-blue-700'
+
+
+                                >
+
+                                    Login
+                                </Link>{" "}
+
+
+                            </p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default Signup

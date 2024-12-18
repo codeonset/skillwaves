@@ -1,0 +1,73 @@
+import React from 'react';
+import { Link } from "react-router-dom"
+import { useForm } from "react-hook-form";
+
+function Login() {
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
+
+
+    return (
+        <div>
+            <dialog id="my_modal_3" className="modal">
+                <div className="modal-box">
+                    <form onSubmit={handleSubmit(onSubmit)} method="dialog">
+                        {/* if there is a button in form, it will close the modal */}
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 dark:text-black ">✕</button>
+                    </form>
+                    <h3 className=" text-lg dark:text-black">Login!</h3>
+                    <hr />
+
+
+                    {/* Email  */}
+
+                    <div className='mt-4 space-y-1'>
+                        <span className='dark:text-black'>Email</span>
+                        <br />
+                        <input type="email" placeholder='Enter your email ' className='  py-2 border outline-none w-80 px-4 rounded-md'
+                            {...register("email", { required: true })}
+                        />
+                         {errors.email && <span>This field is required</span>}
+                    </div>
+
+
+                    {/* Password */}
+
+
+                    <div className='mt-4 space-y-1'>
+                        <span className='dark:text-black' >Password</span>
+                        <br />
+                        <input type="password" placeholder='Enter your password ' className='  py-2 border outline-none w-80 px-4 rounded-md'
+                         {...register("password", { required: true })}
+                        />
+                         {errors.password && <span>This field is required</span>}
+                    </div>
+
+
+
+                    {/* Login */}
+
+                    <div className='flex  justify-between mt-5 '>
+                        <button className='cursor-pointer bg-pink-500 hover:bg-pink-700 text-white rounded-md px-3 py-1 '>Login</button>
+
+
+                        {/* Signup */}
+
+
+                        <p>Don't have an account?{" "}
+
+                            <Link to="/signup" className=' cursor-pointer underline text-blue-500 hover:text-blue-700'>
+                                SignUp
+                            </Link>{" "}
+                        </p>
+
+
+                    </div>
+                </div>
+            </dialog>
+        </div>
+    );
+}
+
+export default Login;
